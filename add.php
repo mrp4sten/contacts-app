@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (empty($_POST["name"] || empty($_POST["phone_number"]))) {
     $error = "Please fill all fileds";
   } else if (strlen($_POST["phone_number"]) < 10 || strlen($_POST["phone_number"]) > 10) {
-    $error = "Phone number must be at least 10 digits";
+    $error = "Phone number must have 10 digits";
   } else {
     $statement = $conn->prepare("INSERT INTO contacts (name, phone_number) VALUES (:name, :phone_number)");
     $statement->bindValue(':name',$_POST["name"]);
