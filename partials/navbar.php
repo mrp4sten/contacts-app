@@ -9,11 +9,17 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link" href="/contacts-app/">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/contacts-app/add.php">Add Contact</a>
+        </li> -->
+        <li class="nav-item">
+          <a class="nav-link" href="/contacts-app/register.php">Register</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contacts-app/login.php">Login</a>
         </li>
       </ul>
     </div>

@@ -4,6 +4,13 @@ CREATE DATABASE contacts_app;
 
 USE contacts_app;
 
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name varchar(255),
+    email varchar(255) UNIQUE,
+    password varchar(255)
+);
+
 CREATE TABLE contacts (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255),
