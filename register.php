@@ -4,7 +4,7 @@ require "database.php";
 $error = null;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  if (empty($_POST["name"] || empty($_POST["email"])) || empty($_POST["password"])) {
+  if (empty($_POST["name"]) || empty($_POST["email"]) || empty($_POST["password"])) {
     $error = "Please fill all fileds";
   } else if (!str_contains($_POST["email"], "@")) {
     $error = "Email format is incorrect";
