@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         ->execute([
           ":name" => $_POST["name"],
           ":email" => $_POST["email"],
-          ":password" => password_hash($_POST["name"], PASSWORD_BCRYPT)
+          ":password" => password_hash($_POST["password"], PASSWORD_BCRYPT)
         ]);
 
       $statement = $conn->prepare("SELECT * FROM users WHERE email = :email LIMIT 1");
