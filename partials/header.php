@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="./static/css/main.css">
 
   <?php $uri = parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH); ?>
-  <?php if ($uri == "/contacts-app/" || $uri == "/contacts-app/index.php"): ?>
+  <?php if ($uri == "/contacts-app/" || $uri == "/contacts-app/index.php") : ?>
     <script defer src="./static/js/welcome.js"></script>
   <?php endif; ?>
 </head>
@@ -25,5 +25,11 @@
   <!-- navbar -->
   <?php require "partials/navbar.php" ?>
   <main>
-
-  <!-- content here -->
+    <?php if (isset($_SESSION["flash"])) : ?>
+      <div class="alert alert-dismissible alert-danger">
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        <strong>Message!</strong> <?= $_SESSION["flash"]["message"] ?>
+      </div>
+      <?php unset($_SESSION["flash"]) ?>
+    <?php endif ?>
+    <!-- content here -->
